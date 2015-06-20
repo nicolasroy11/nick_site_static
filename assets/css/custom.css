@@ -1,0 +1,345 @@
+/* Color References
+
+Green: #79b044
+Navy: #dd5638
+Blue Gray: #3e4249
+
+*/
+
+/* ===General=== */
+
+body 
+{
+	margin-top: 50px;	/*prevents navbar from merging into the body*/
+	font-family: 'Quicksand', Helvetica, sans-serif;	/*default is proxima-nova, but if that fails to connect, we use Quicksand*/
+	font-size: 16px;
+	background: url('../img/tile.jpg') top left repeat;
+	padding-bottom: 70px;	
+}
+
+/* ===Global=== */
+#hero
+{
+
+	background: url('../img/nick-bg.jpg') 50% 0 repeat fixed;
+	min-height: 500px;
+	padding: 40px 0;
+	color: white;
+	-webkit-font-smoothing: antialiased;	/*prevents h text from smudging due to resolution issues*/
+	text-rendering: optimizelegibility;
+}
+
+top-bar
+{
+	background-color: 999999;
+}
+
+/*These will override Bootstrap font sizing, but we want to do so to match our design*/
+h1,h2,h3,h4,h5,h6,p
+{
+	-webkit-font-smoothing: antialiased;	/*prevents h text from smudging due to resolution issues*/
+	text-rendering: optimizelegibility;
+	font-weight: bold;
+}
+
+h1
+{
+	font-size: 3em;
+}
+
+h1,h2
+{
+	margin: 0 0 40px;
+}
+
+h3
+{
+	margin: 20px 0;
+}
+
+h4
+{
+	font-size: 18px;
+}
+
+a:link, a:visited
+{
+	color: black;
+	font-weight: bold;
+}
+
+a:hover
+{	
+	color: #555;
+	text-decoration: none;	/*We don't want an underline when we hover over the links*/
+}
+
+
+/*for each initial letter in a paragraph - instead of p::first-letter*/
+.initial
+{
+	font-weight: bold;
+	font-size: 1.5em;
+	margin: 2px;
+	padding: 2px;
+	color: white;
+	background: rgba(0,0,0,0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px 0 6px 0;	/*This is CSS3 - the radius can be changed depending on which quadrant of the circle you're in. You can make a teardrop by changing these individual radii*/
+}
+
+.navbar-wrapper .dropdown-menu a
+{
+    color: #ffffff;
+}
+
+.navbar-wrapper .dropdown-menu
+{
+    background-color: rgba(0,0,0,0.8);
+    color: #ffffff;
+}
+
+/*Styling the social media badges - to understand the class selector '.badge.social' look at the class in the html doc*/
+.badge.social
+{
+	background: #ccc;
+	font-size: 24px;
+	height: 40px;	/*These are the height and width of the badges*/
+	width: 40px;
+	text-align: center;	/*This is so the logos of the social media will be centered in the circle*/
+	line-height: 42px;	/*the vertical alignment parameter - we fix it to 42px instead of 40px, because the logos aren't naturally exactly centered*/
+	margin: 0 5px 20px 0;
+	padding: 0;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px 50px 50px 50px;	/*This is CSS3 - the radius can be changed depending on which quadrant of the circle you're in. You can make a teardrop by changing these individual radii*/
+	color: #fff;	/*the logos within will be white*/
+}
+
+/*When the user hovers over the badges, they should take on the trademark colors of the social media to comply with their brand regulations*/
+.badge.social.twitter:hover
+{
+	background: #55acee;
+}
+
+.badge.social.facebook:hover
+{
+	background: #3b5998;
+}
+
+.badge.social.github:hover
+{
+	background: #4183c4;
+}
+
+/* ===HERO section=== */
+
+
+
+#hero .hero-text
+{
+	margin-top: 10px;
+}
+
+#intro .intro-text
+{
+	margin-top: 20px;
+}
+
+/*============ ABOUT PAGE ================*/
+#about
+{
+	margin-top: 40px;
+}
+
+
+/*============ MUSIC PAGE ================*/
+
+#music 
+{
+	margin-top: 20px;
+}
+
+#music .song
+{
+	padding: 12px;
+	border: 1px #aaa;
+	background: #ddd;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	width: 100%;
+	display: table;
+	vertical-align: center;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 40px 0 40px 0;	/*This is CSS3 - the radius can be changed depending on which quadrant of the circle you're in. You can make a teardrop by changing these individual radii*/
+}
+
+#music .intro-text
+{
+	margin-top: 30px;
+	margin-bottom: 50px;
+	text-align: center;
+	
+}
+
+#music .song-controls h1
+{
+
+}
+
+#music .song-controls h2
+{
+	font-weight: normal;
+	color: #555;
+}
+
+#music .song-controls h4
+{
+	font-weight: normal;
+	color: #777;
+}
+
+#music hr
+{
+	color: #000;
+}
+
+#music .song-controls span
+{
+	display: inline;
+	vertical-align: center;
+}
+
+#music .song-controls audio
+{
+	padding-top: 17px;
+}
+
+/*============ FOOTER ================*/
+
+footer
+{
+	background: #3e4249;
+	color: white;
+	padding: 20px 0 10px;
+	font-size: 12px;
+	bottom: 0;
+    position: fixed;
+	width: 100%;
+}
+
+footer p
+{
+	margin-top: 0;
+}
+
+footer a:link, footer a:visited
+{
+	color: white;
+}
+
+footer a:hover
+{
+	color: #00ffff;
+}
+
+footer li.signup-link a
+{
+	color: #dd5638;
+}
+
+footer li.signup-link a:hover
+{
+	font-weight: bold;
+}
+
+footer .dropdown-menu a
+{
+	color: #ffffff;
+}
+
+footer .dropdown-menu
+{
+    background-color: rgba(0,0,0,0.8);
+    color: #ffffff;
+}
+
+/*===Media Queries===*/
+
+/*The following instruction will ensure that if the media width is smaller than 991px, the background will be white (255,255,255) at 80% visibility so that the text can be read even though it is on top of the picure.*/
+@media screen and (max-width: 991px)
+{
+	
+}
+
+/*Pretty much at iPad size*/
+@media screen and (max-width: 768px)
+{
+	.hero-text
+	{
+		color: black;
+		background: rgba(255,255,255,0.5);
+		padding: 20px;
+	}
+	
+	#music h1,h2,h3,h4
+	{
+		font-size: 1.3em;
+		padding: 5px;
+	}
+	
+	#music audio
+	{
+		margin-bottom: 5px;
+	}
+	
+	#music .song
+	{
+		font-size: 1.3em;
+		padding: 5px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px 0 20px 0;
+	}
+}
+
+/*Pretty much at iPhone size*/
+@media screen and (max-width: 568px)
+{
+	.hero-text
+	{
+		color: black;
+		background: rgba(255,255,255,0.5);
+		padding: 20px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px 0 20px 0;
+	}
+	
+	body 
+{
+	padding-bottom: 100px;	
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

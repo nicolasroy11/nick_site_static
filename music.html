@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="songModule">
+	<head>
+		<meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<link rel="icon" href="assets/img/favicon.ico">
+		<title></title>
+		
+		<!-- Bootstrap core CSS
+		-------------------------------------------------->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!--The following is a conditional that will use special HTML and js technologies for IE8 and less>
+		<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- Angular.js -->
+		<script src="assets/js/angular.min.js"></script>
+		
+		<!-- Angular.js Songs Module -->
+		<script src="assets/js/moduleAngular.js"></script>
+		
+		<!-- Font-Awesome Icons (Twitter, Facebook, etc) -->
+		<link rel="stylesheet" href="assets\css\font-awesome\css\font-awesome.min.css">
+		
+		<!-- custom CSS -->
+		<link rel="stylesheet" href="assets\css\custom.css">
+		
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<!-- Header
+		-------------------------------------------------->
+		<header class="site-header" role="banner">
+
+			<!-- NavBar
+			-------------------------------------------------->
+			<div class="navbar-wrapper">
+				<div class="navbar navbar-inverse navbar-fixed-top top-bar" role="navigation">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle Navigation</span>
+								<!-- The following three span are the three bars you see in the sandwich icon when shrinking down -->
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Nicolas Roy"></a>
+						</div><!-- navbar-header -->
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<!-- "active" is a custom CSS will be used to highlight the nav page you are on in the navbar -->
+								<li><a href="index.html">home</a></li>
+								<li><a href="about.html">about</a></li>
+								<li><a href="cv.html">cv</a></li>
+								<li class="active"><a href="music.html">music</a></li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">blog<span class="caret"></span></a>
+								  <ul class="dropdown-menu">
+									<li><a href="atheism.html">misplaced atheism?</a></li>
+									<li><a href="white_privilege.html">white privilege</a></li>
+									<li><a href="#">opinion column</a></li>
+								  </ul>
+								</li>
+							</ul><!-- nav -->
+						</div><!-- navbar collapse -->
+					</div><!-- container -->
+				</div><!-- navbar -->
+			</div><!-- navbar wrapper -->	
+		</header>
+		
+		<!-- Hero
+		-------------------------------------------------->
+		<section id="hero" data-type="background" data-speed="2">
+			<article>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+						
+						</div><!-- col -->
+						<div class="col-sm-4 hero-text">
+							<h1>Music</h1>
+							<p class = "lead">A skill worth having even if it 
+							eventually makes you a pariah. At least then, you will
+							know what your world is made of.</p>
+							<!-- <p><a class="btn btn-lg" href="/" role="button">Enroll &raquo</a></p> -->
+						<div class="col-sm-2">
+						
+						</div><!-- col -->
+						</div><!-- col -->
+					</div><!-- row -->
+				</div><!-- container -->
+			</article>
+		</section>
+		
+		<!-- Music
+		-------------------------------------------------->
+		<section id="music">
+			<article>
+				<div ng-controller="songController">
+					<div class="container">
+					<p class="lead intro-text"><span class="initial">T</span>he samples below belong to a much larger, still growing, library of music. Some were performed live with MAX, a band I was a member of with close friends, and for which I wrote most of the music. Others are simply instrumentals meant as either soundtracks or accompanying pieces.</p>
+						<div class="song" ng-repeat="item in author">
+							<div class="row">
+								<div class="col-sm-6 song-controls">
+									<h1>{{item.title}}</h1>
+									<h2>{{item.subtitle}}</h2>
+									<h4>{{item.author}}</h4>
+									<audio controls>
+										<source ng-src={{item.source}} type={{item.type}}>
+										Your browser does not support the audio element. Try FireFox or Chrome!
+									</audio>
+								</div><!-- song-controls -->
+								<div class="col-sm-6">
+									<p class = "lead">
+										{{item.description}}
+										<a ng-hide={{item.no_lyrics}} onclick="window.open(this.href,'nom_Popup','​height=200 , width=400 ,location=no ,resizable=yes ,scrollbars=yes');return false;" ng-href={{item.lyrics_link}}>lyrics</a>
+									</p>
+								</div><!-- col -->
+							</div><!-- row -->
+						</div><!-- song -->
+					</div><!-- container -->
+				</div><!-- ng-controller="songController" -->
+			</article>
+		</section>
+		
+		<!-- Footer
+		-------------------------------------------------->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						<p><a href=""><img src="assets/img/logo.png" alt="Nicolas Roy"></a></p>
+					</div><!-- col -->
+					<div class="col-sm-6">
+						<nav>
+							<!-- list-unstyled does away with any bullet-points,etc; list-inline makes sure the list elements appear next to each other, not in a vertical list.-->
+							<ul class="list-unstyled list-inline">
+								<li><a href="index.html">home</a></li>
+								<li><a href="about.html">about</a></li>
+								<li><a href="cv.html">cv</a></li>
+								<li><a href="music.html">music</a></li>
+								<li class="dropdown dropup">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">blog<span class="caret"></span></a>
+								  <ul class="dropdown-menu">
+									<li><a href="atheism.html">misplaced atheism?</a></li>
+									<li><a href="white_privilege.html">white privilege</a></li>
+									<li><a href="#">opinion column</a></li>
+								  </ul>
+								</li>
+							</ul>
+						</nav>
+					</div><!-- col -->
+					<div class="col-sm-3">
+						<!-- 'pull-right' is a bootstrap helper class that will float your paragraph to the right-->
+						<p class="pull-right">&copy; 2015 Nicolas Roy</p>
+					</div><!-- col -->
+				</div><!-- row -->
+			</div><!--container-->
+		</footer>
+		
+		<!-- Modal
+		-------------------------------------------------->
+		<div>
+		
+		</div>
+		
+		<!-- Bootstrap core javascript - Bootstrap needs jQuery to run
+		these are at the bottom of the body so that the page loads faster
+		Downloaded from Google hosted libraries - jQuery section
+		-------------------------------------------------->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="assets/js/jquery-2.1.4.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
